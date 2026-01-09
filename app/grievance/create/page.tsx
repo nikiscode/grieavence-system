@@ -550,18 +550,7 @@ export default function CreateGrievancePage() {
                     checked={anonymous}
                     onChange={(e) => {
                       setAnonymous(e.target.checked);
-                      if (e.target.checked) {
-                        // Clear user details when anonymous
-                        setUserName('');
-                        setUserEmail('');
-                        setUserPhone('');
-                        setStudentYear('');
-                        setStudentClass('');
-                      } else {
-                        // Restore user details when not anonymous
-                        setUserName(user?.displayName || userRole?.name || '');
-                        setUserEmail(user?.email || '');
-                      }
+                      
                     }}
                     className="rounded"
                   />

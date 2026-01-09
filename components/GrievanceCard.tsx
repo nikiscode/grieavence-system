@@ -9,7 +9,7 @@ interface GrievanceCardProps {
   category: string;
   priority: string;
   status: string;
-  summary: string;
+  summary?: string;
   createdAt: any;
   slaDeadline?: any;
   title?: string;
