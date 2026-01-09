@@ -2,15 +2,6 @@
 
 A fully functional, end-to-end grievance management system built with Next.js, Firebase, and Google AI technologies (Gemini & Vertex AI).
 
-## 🚀 Quick Start for Hackathons
-
-**Need a quick demo setup?** Check out **[HACKATHON_SETUP.md](./HACKATHON_SETUP.md)** for a 5-minute free tier setup guide!
-
-- ✅ 100% FREE (no credit card required)
-- ✅ Works with Firebase Spark Plan (free forever)
-- ✅ Gemini API free tier included
-- ✅ Perfect for hackathon demonstrations
-
 ## 📚 Documentation
 
 - **[💬 Chat Interface Guide](./CHAT_INTERFACE_GUIDE.md)** - Complete guide with examples on using the AI chat interface
@@ -1416,11 +1407,4 @@ This grievance management system demonstrates the power of modern cloud platform
 - **File Attachments**: Direct upload to cloud storage with CDN
 
 **Built with AI, powered by Google Cloud, delivered in record time!**
-
----
-
-*Last Updated: January 2024*  
-*Version: 2.0*  
-*Generated with assistance from Google Gemini AI*  
-*Updated to reflect Profile Management and Anonymous Submission features*
 
