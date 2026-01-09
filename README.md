@@ -353,6 +353,7 @@ For issues or questions, please refer to the Firebase and Google Cloud documenta
 ---
 
 **Built with ❤️ using Google Technologies**
+<<<<<<< Updated upstream
 # 🚀 Grievance System - Complete Demo Guide
 
 > **🆕 Latest Updates**: 
@@ -1408,3 +1409,5 @@ This grievance management system demonstrates the power of modern cloud platform
 
 **Built with AI, powered by Google Cloud, delivered in record time!**
 
+=======
+>>>>>>> Stashed changes
