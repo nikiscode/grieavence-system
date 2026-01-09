@@ -1,10 +1,10 @@
-import * as functions from 'firebase-functions';
+import { firestore, pubsub, https } from 'firebase-functions/v1';
 import * as admin from 'firebase-admin';
 
 admin.initializeApp();
 
 // Auto-assign grievances based on category and department
-export const autoAssignGrievance = functions.firestore
+export const autoAssignGrievance = firestore
   .document('grievances/{grievanceId}')
   .onCreate(async (snap, context) => {
     const grievance = snap.data();
@@ -49,11 +49,10 @@ export const autoAssignGrievance = functions.firestore
   });
 
 // SLA Escalation - Check for overdue grievances
-export const escalateSLA = functions.pubsub
+export const escalateSLA = pubsub
   .schedule('every 1 hours')
   .onRun(async (context) => {
     const now = admin.firestore.Timestamp.now();
-    const oneHourAgo = admin.firestore.Timestamp.fromMillis(now.toMillis() - 3600000);
 
     try {
       // Find grievances past SLA deadline
@@ -64,8 +63,6 @@ export const escalateSLA = functions.pubsub
         .get();
 
       for (const doc of overdueQuery.docs) {
-        const grievance = doc.data();
-        
         // Escalate to admin
         await doc.ref.update({
           escalated: true,
@@ -95,14 +92,14 @@ export const escalateSLA = functions.pubsub
   });
 
 // Classify grievance using Vertex AI (placeholder)
-export const classifyGrievance = functions.https.onCall(async (data, context) => {
+export const classifyGrievance = https.onCall(async (data: any, context: any) => {
   if (!context.auth) {
-    throw new functions.https.HttpsError('unauthenticated', 'User must be authenticated');
+    throw new https.HttpsError('unauthenticated', 'User must be authenticated');
   }
 
   const { text } = data;
   if (!text) {
-    throw new functions.https.HttpsError('invalid-argument', 'Text is required');
+    throw new https.HttpsError('invalid-argument', 'Text is required');
   }
 
   // Placeholder for Vertex AI classification
